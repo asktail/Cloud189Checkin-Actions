@@ -32,17 +32,13 @@ jobs:
         user_list=()
         pwd_list=()
 
-        IFS=","
-
         for u in ${user[*]}
         do
-        echo ${u}
         user_list[${#user_list[*]}]=${u}
         done
 
         for p in ${pwd[*]}
         do
-        echo ${p}
         pwd_list[${#pwd_list[*]}]=${p}
         done
 
@@ -56,7 +52,7 @@ jobs:
         echo "共有 $user_num 个账号，即将开始签到"
         fi
 
-        rand_time=$(($RANDOM % 45))
+        random_time=$(($RANDOM % 45))
         echo "等待 ${random_time} 分钟后开始签到"
         for((i=1;i<=${random_time};i++));  
         do
